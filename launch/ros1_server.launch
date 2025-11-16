@@ -1,0 +1,12 @@
+<launch>
+  <!-- Declare the launch‐file arguments -->
+  <arg name="ip"    default="127.0.0.1"/>
+  <arg name="debug" default="false"/>
+
+  <!-- Launch the MiddleMan node, forwarding those args -->
+  <node pkg="ros1_server"
+        type="middle_man.py"
+        name="middle_man_node"
+        output="screen"
+        args="--ip $(arg ip) --debug $(arg debug)"/>
+</launch>
