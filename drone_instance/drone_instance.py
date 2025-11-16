@@ -242,7 +242,7 @@ class DroneInstance:
             offset_z = self.telemetry_manager.get_pose_offset()["z"]
             pose_z = pose["z"] - offset_z
 
-        if pose_z is not None and pose_z > 1.5:
+        if pose_z is not None and pose_z > 1.0:
             self.has_taken_off = True
         
         takeoff_altitude = 2.0 + self.telemetry_manager.get_pose_offset()["z"]

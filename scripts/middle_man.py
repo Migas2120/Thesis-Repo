@@ -55,7 +55,7 @@ def main():
     logger.info(f"[Main] Connecting out to Unity at {args.ip}:{UNITY_PORT}")
     app._init_client(host=args.ip, port=UNITY_PORT)
 
-    rate = rospy.Rate(1.0)  # 1 Hz
+    rate = rospy.Rate(10.0)  # 1 Hz
     try:
         while not rospy.is_shutdown():
             app.tick()
