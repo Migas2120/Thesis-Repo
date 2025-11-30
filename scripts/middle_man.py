@@ -17,6 +17,8 @@ from core.system_monitor import SystemMonitor
 
 
 
+
+
 def main():
     # CLI args
     parser = argparse.ArgumentParser(description="ROS 1 MiddleMan single-drone server")
@@ -37,7 +39,8 @@ def main():
 
     # --- System Monitor Start ---
     sysmon_log = os.path.join(
-        "/home/migasdrone/ros1_ws/src/ros1_server/logs",
+        package_root,
+        "logs",
         f"sysmon_{datetime.datetime.now():%Y%m%d_%H%M%S}.jsonl"
     )
     sysmon = SystemMonitor(logger, log_file=sysmon_log)
